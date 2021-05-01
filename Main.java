@@ -1,4 +1,3 @@
-
 import Timeline.Fleet;
 import Timeline.Tweet.HashTag;
 import Timeline.Tweet.Image;
@@ -11,7 +10,7 @@ import User.InvalidGenderException;
 import User.Profile;
 import java.util.Scanner;
 
-public class TwitterApp {
+public class Main {
 
     /*
     private static List<Account> accounts;
