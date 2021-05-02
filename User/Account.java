@@ -34,7 +34,7 @@ public class Account {
     
     private int passAttempt;
             
-    private int maxAttempts;
+    private final int maxAttempts;
 
     public Account(String username, String password, Profile profile) {
         this.username = username;
@@ -50,6 +50,14 @@ public class Account {
         this.searches = new AssociatedList<>();
         this.moments = new AssociatedList<>();
         this.threads = new AssociatedList<>();
+    }
+
+    public AssociatedList<Notification> getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(AssociatedList<Notification> following) {
+        this.following = following;
     }
 
     public String getUsername() {
@@ -117,7 +125,63 @@ public class Account {
 
         return false;
     }
-    
+
+    public AssociatedList<Message> getSent() {
+        return sent;
+    }
+
+    public void setSent(AssociatedList<Message> sent) {
+        this.sent = sent;
+    }
+
+    public AssociatedList<Message> getReceived() {
+        return received;
+    }
+
+    public void setReceived(AssociatedList<Message> received) {
+        this.received = received;
+    }
+
+    public AssociatedList<Tweet> getTweets() {
+        return tweets;
+    }
+
+    public void setTweets(AssociatedList<Tweet> tweets) {
+        this.tweets = tweets;
+    }
+
+    public AssociatedList<Poll> getPolls() {
+        return polls;
+    }
+
+    public void setPolls(AssociatedList<Poll> polls) {
+        this.polls = polls;
+    }
+
+    public AssociatedList<SavedSearch> getSearches() {
+        return searches;
+    }
+
+    public void setSearches(AssociatedList<SavedSearch> searches) {
+        this.searches = searches;
+    }
+
+    public AssociatedList<Moment> getMoments() {
+        return moments;
+    }
+
+    public void setMoments(AssociatedList<Moment> moments) {
+        this.moments = moments;
+    }
+
+    public AssociatedList<Thread> getThreads() {
+        return threads;
+    }
+
+    public void setThreads(AssociatedList<Thread> threads) {
+        this.threads = threads;
+    }
+
     @Override
     public String toString() {
         return username;

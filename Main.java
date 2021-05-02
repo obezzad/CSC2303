@@ -2,14 +2,9 @@ import Timeline.Fleet;
 import Timeline.Tweet.HashTag;
 import Timeline.Tweet.Image;
 import Timeline.Tweet.Tweet;
-import User.Account;
-import User.DuplicateUserException;
-import User.WrongPasswordException;
-import User.Gender;
-import User.InvalidGenderException;
-import User.Profile;
+import User.*;
+
 import java.util.Scanner;
-import Aggregation.AssociatedList;
 
 public class Main {
 
@@ -146,6 +141,9 @@ public class Main {
                 System.out.println("7. Get Gender");
                 System.out.println("8. Modify Gender");
                 System.out.println("9. Get all posts");
+                System.out.println("10. Add Topic");
+                System.out.println("11. Remove Topic");
+                System.out.println("12. Get Topics");
 
                 System.out.println("Please choose an option (1-9)>> ");
                 int c = Integer.parseInt(sc.nextLine());
@@ -217,6 +215,24 @@ public class Main {
                             if (tweet instanceof Fleet) {
                                 System.out.println(((Fleet) tweet).getSeenBy());
                             }
+                        }
+                        break;
+                        // TODO: Check for accounts in add following and throw an error if it doesn't exist.
+                     case 10:
+                         System.out.println("Please enter the name of the topic to add: ");
+                         str = sc.nextLine();
+                         chosen_acc.getProfile().getTopic().addElement(str);
+                         break;
+                     case 11:
+                         // TODO: Add ElementNotFound exception handling
+                         System.out.println("Please enter the name of the topic to remove: ");
+                         str = sc.nextLine();
+                         chosen_acc.getProfile().getTopic().removeElement(str);
+                         break;
+                    case 12:
+                        for (String topic : chosen_acc.getProfile().getTopic().getElements())
+                        {
+                            System.out.println("- "+topic);
                         }
                         break;
                     default:
