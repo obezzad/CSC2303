@@ -110,6 +110,10 @@ public class Account {
         this.password = newPassword;
     }
 
+    @Override
+    public boolean equals(Account acc){
+        return this.username.equals(acc.username);
+    }
     
     @Override
     public String toString() {

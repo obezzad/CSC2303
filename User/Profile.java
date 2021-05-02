@@ -104,6 +104,11 @@ public class Profile {
     }
 
     @Override
+    public boolean equals(Profile p){
+        return this.email.equals(p.email);
+    }
+
+    @Override
     public String toString() {
         return description;
     }
