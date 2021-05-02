@@ -1,6 +1,6 @@
 package Timeline.Tweet;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 import User.Account;
 
 public class Image {
@@ -9,7 +9,7 @@ public class Image {
 
     private String caption;
 
-    private AssociatedList<Account> tagged;
+    private CustomCollection<Account> tagged;
 
     public Image(String file) {
         this.file = file;
@@ -18,7 +18,7 @@ public class Image {
     public Image(String file, String caption) {
         this.file = file;
         this.caption = caption;
-        this.tagged = new AssociatedList<>();
+        this.tagged = new CustomCollection<>();
     }
 
     public String getFile() {
@@ -37,11 +37,11 @@ public class Image {
         this.caption = caption;
     }
 
-    public AssociatedList<Account> getTagged() {
+    public CustomCollection<Account> getTagged() {
         return tagged;
     }
 
-    public void setTagged(AssociatedList<Account> tagged) { this.tagged = tagged; }
+    public void setTagged(CustomCollection<Account> tagged) { this.tagged = tagged; }
 
     @Override
     public String toString() {

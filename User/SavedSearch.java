@@ -1,10 +1,10 @@
 package User;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 
 public class SavedSearch {
 
-    private AssociatedList<String> keywords;
+    private CustomCollection<String> keywords;
 
     private Account account;
 
@@ -14,11 +14,11 @@ public class SavedSearch {
         this.account = account;
     }
 
-    public AssociatedList<String> getKeyword() {
+    public CustomCollection<String> getKeyword() {
         return keywords;
     }
 
-    public void setKeywords(AssociatedList<String> keywords) {
+    public void setKeywords(CustomCollection<String> keywords) {
         this.keywords = keywords;
     }
 

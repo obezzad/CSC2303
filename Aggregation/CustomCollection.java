@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class AssociatedList<T> {
+public class CustomCollection<T> {
 
    public List <T> elements;
-   public  AssociatedList(){
+   public  CustomCollection(){
         this.elements = new LinkedList<>();
     }
     

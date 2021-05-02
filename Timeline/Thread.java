@@ -1,16 +1,16 @@
 package Timeline;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 import Timeline.Tweet.Tweet;
 
 public class Thread {
 
     private Tweet tweet;
-    private AssociatedList<Tweet> replies;
+    private CustomCollection<Tweet> replies;
 
     public Thread(Tweet tweet) {
         this.tweet = tweet;
-        this.replies = new AssociatedList<>();
+        this.replies = new CustomCollection<>();
     }
 
     public Tweet getTweet() {
@@ -21,11 +21,11 @@ public class Thread {
         this.tweet = tweet;
     }
 
-    public AssociatedList<Tweet> getreplies() {
+    public CustomCollection<Tweet> getreplies() {
         return replies;
     }
 
-    public void setreplies(AssociatedList<Tweet> replies) {
+    public void setreplies(CustomCollection<Tweet> replies) {
         this.replies = replies;
     }
 

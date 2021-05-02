@@ -1,6 +1,6 @@
 package Poll;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 
 public class Poll {
 
@@ -8,7 +8,7 @@ public class Poll {
 
     private int duration;
 
-    private AssociatedList<PollAnswerOption> answers;
+    private CustomCollection<PollAnswerOption> answers;
 
     public Poll(String question, int duration) {
         this.question = question;
@@ -31,11 +31,11 @@ public class Poll {
         this.duration = duration;
     }
 
-    public AssociatedList<PollAnswerOption> getanswers() {
+    public CustomCollection<PollAnswerOption> getanswers() {
         return answers;
     }
 
-    public void setAnswers(AssociatedList<PollAnswerOption> answers) {
+    public void setAnswers(CustomCollection<PollAnswerOption> answers) {
         this.answers = answers;
     }
 

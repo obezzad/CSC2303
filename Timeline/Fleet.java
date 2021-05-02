@@ -1,6 +1,6 @@
 package Timeline;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 import Timeline.Tweet.HashTag;
 import Timeline.Tweet.HashTag;
 import Timeline.Tweet.Image;
@@ -11,17 +11,17 @@ import User.Account;
 
 public class Fleet extends Tweet {
 
-    private AssociatedList<Account> seen_by;
+    private CustomCollection<Account> seen_by;
 
     public Fleet(String tweet_ID, String text, Account account) {
         super(tweet_ID, text);
-        this.seen_by = new AssociatedList<>();
+        this.seen_by = new CustomCollection<>();
     }
 
-    public AssociatedList<Account> getSeenBy() {
+    public CustomCollection<Account> getSeenBy() {
         return seen_by;
     }
-    public void setSeenBy(AssociatedList<Account> seen_by) { this.seen_by = seen_by; }
+    public void setSeenBy(CustomCollection<Account> seen_by) { this.seen_by = seen_by; }
 
     /*
     public void view() {

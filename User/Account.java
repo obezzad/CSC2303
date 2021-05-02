@@ -1,6 +1,6 @@
 package User;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 import Poll.Poll;
 import Messaging.Message;
 import Timeline.Moment;
@@ -14,23 +14,23 @@ public class Account {
 
     private Profile profile;
 
-    private AssociatedList<Notification> followers;
+    private CustomCollection<Notification> followers;
 
-    private AssociatedList<Notification> following;
+    private CustomCollection<Notification> following;
 
-    private AssociatedList<Message> sent;
+    private CustomCollection<Message> sent;
 
-    private AssociatedList<Message> received;
+    private CustomCollection<Message> received;
 
-    private AssociatedList<Tweet> tweets;
+    private CustomCollection<Tweet> tweets;
 
-    private AssociatedList<Poll> polls;
+    private CustomCollection<Poll> polls;
 
-    private AssociatedList<SavedSearch> searches;
+    private CustomCollection<SavedSearch> searches;
 
-    private AssociatedList<Moment> moments;
+    private CustomCollection<Moment> moments;
 
-    private AssociatedList<Thread> threads;
+    private CustomCollection<Thread> threads;
     
     private int passAttempt;
             
@@ -41,22 +41,22 @@ public class Account {
         this.password = password;
         this.profile = profile;
         this.maxAttempts = 3;
-        this.followers = new AssociatedList<>();
-        this.following = new AssociatedList<>();
-        this.sent = new AssociatedList<>();
-        this.received = new AssociatedList<>();
-        this.tweets = new AssociatedList<>();
-        this.polls = new AssociatedList<>();
-        this.searches = new AssociatedList<>();
-        this.moments = new AssociatedList<>();
-        this.threads = new AssociatedList<>();
+        this.followers = new CustomCollection<>();
+        this.following = new CustomCollection<>();
+        this.sent = new CustomCollection<>();
+        this.received = new CustomCollection<>();
+        this.tweets = new CustomCollection<>();
+        this.polls = new CustomCollection<>();
+        this.searches = new CustomCollection<>();
+        this.moments = new CustomCollection<>();
+        this.threads = new CustomCollection<>();
     }
 
-    public AssociatedList<Notification> getFollowing() {
+    public CustomCollection<Notification> getFollowing() {
         return following;
     }
 
-    public void setFollowing(AssociatedList<Notification> following) {
+    public void setFollowing(CustomCollection<Notification> following) {
         this.following = following;
     }
 
@@ -65,8 +65,8 @@ public class Account {
     }
 
     // TODO: C-style array acc[] --> Collection Framework
-    public static boolean checkUsername(String entered, Account acc[]) throws DuplicateUserException {
-        for (Account a : acc) {
+    public static boolean checkUsername(String entered, CustomCollection<Account> acc) throws DuplicateUserException {
+        for (Account a : acc.getElements()) {
             if (a.getUsername().equals(entered)) {
                 throw new DuplicateUserException(entered);
             }
@@ -104,10 +104,7 @@ public class Account {
     }
 
     public boolean authenticate(String username, String password) {
-        if (this.username.equals(username) && this.password.equals(password)) {
-            return true;
-        }
-        return false;
+        return (this.username.equals(username) && this.password.equals(password));
     }
 
     public void changePass(String newPassword) {
@@ -126,59 +123,59 @@ public class Account {
         return false;
     }
 
-    public AssociatedList<Message> getSent() {
+    public CustomCollection<Message> getSent() {
         return sent;
     }
 
-    public void setSent(AssociatedList<Message> sent) {
+    public void setSent(CustomCollection<Message> sent) {
         this.sent = sent;
     }
 
-    public AssociatedList<Message> getReceived() {
+    public CustomCollection<Message> getReceived() {
         return received;
     }
 
-    public void setReceived(AssociatedList<Message> received) {
+    public void setReceived(CustomCollection<Message> received) {
         this.received = received;
     }
 
-    public AssociatedList<Tweet> getTweets() {
+    public CustomCollection<Tweet> getTweets() {
         return tweets;
     }
 
-    public void setTweets(AssociatedList<Tweet> tweets) {
+    public void setTweets(CustomCollection<Tweet> tweets) {
         this.tweets = tweets;
     }
 
-    public AssociatedList<Poll> getPolls() {
+    public CustomCollection<Poll> getPolls() {
         return polls;
     }
 
-    public void setPolls(AssociatedList<Poll> polls) {
+    public void setPolls(CustomCollection<Poll> polls) {
         this.polls = polls;
     }
 
-    public AssociatedList<SavedSearch> getSearches() {
+    public CustomCollection<SavedSearch> getSearches() {
         return searches;
     }
 
-    public void setSearches(AssociatedList<SavedSearch> searches) {
+    public void setSearches(CustomCollection<SavedSearch> searches) {
         this.searches = searches;
     }
 
-    public AssociatedList<Moment> getMoments() {
+    public CustomCollection<Moment> getMoments() {
         return moments;
     }
 
-    public void setMoments(AssociatedList<Moment> moments) {
+    public void setMoments(CustomCollection<Moment> moments) {
         this.moments = moments;
     }
 
-    public AssociatedList<Thread> getThreads() {
+    public CustomCollection<Thread> getThreads() {
         return threads;
     }
 
-    public void setThreads(AssociatedList<Thread> threads) {
+    public void setThreads(CustomCollection<Thread> threads) {
         this.threads = threads;
     }
 

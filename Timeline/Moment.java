@@ -1,6 +1,6 @@
 package Timeline;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 import Timeline.Tweet.Tweet;
 
 public class Moment {
@@ -11,7 +11,7 @@ public class Moment {
 
     private String cover_image;
 
-    private AssociatedList<Tweet> tweets;
+    private CustomCollection<Tweet> tweets;
 
     public Moment(String title, String description, String cover_image) {
         this.title = title;
@@ -43,11 +43,11 @@ public class Moment {
         this.cover_image = cover_image;
     }
 
-    public AssociatedList<Tweet> getTweet() {
+    public CustomCollection<Tweet> getTweet() {
         return tweets;
     }
 
-    public void setTweet(AssociatedList<Tweet> tweets) {
+    public void setTweet(CustomCollection<Tweet> tweets) {
         this.tweets = tweets;
     }
 

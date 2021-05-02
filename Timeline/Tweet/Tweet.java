@@ -1,6 +1,6 @@
 package Timeline.Tweet;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 
 import java.util.GregorianCalendar;
 
@@ -12,13 +12,13 @@ public class Tweet {
 
     private int likes;
 
-    private AssociatedList<HashTag> hashtag;
+    private CustomCollection<HashTag> hashtag;
 
-    private AssociatedList<Tweet> retweet;
+    private CustomCollection<Tweet> retweet;
 
     private String tweet_ID;
 
-    private AssociatedList<Image> images;
+    private CustomCollection<Image> images;
 
 	//	private
 
@@ -27,8 +27,8 @@ public class Tweet {
         this.likes = 0;
         this.tweet_ID = tweet_ID;
         this.posted = new GregorianCalendar();
-        this.images = new AssociatedList<>();
-        this.hashtag = new AssociatedList<>();
+        this.images = new CustomCollection<>();
+        this.hashtag = new CustomCollection<>();
     }
 
     public String getText() {
@@ -55,19 +55,19 @@ public class Tweet {
         this.likes = likes;
     }
 
-    public AssociatedList<HashTag> getHashtags() {
+    public CustomCollection<HashTag> getHashtags() {
         return hashtag;
     }
 
-    public void setHashtags(AssociatedList<HashTag> hashtags) {
+    public void setHashtags(CustomCollection<HashTag> hashtags) {
         this.hashtag = hashtags;
     }
 
-    public AssociatedList<Tweet> getRetweet() {
+    public CustomCollection<Tweet> getRetweet() {
         return retweet;
     }
 
-    public void setRetweets(AssociatedList<Tweet> retweet) {
+    public void setRetweets(CustomCollection<Tweet> retweet) {
         this.retweet = retweet;
     }
 
@@ -79,11 +79,11 @@ public class Tweet {
         this.tweet_ID = tweet_ID;
     }
 
-    public AssociatedList<Image> getImages() {
+    public CustomCollection<Image> getImages() {
         return images;
     }
 
-    public void setImages(AssociatedList<Image> images) {
+    public void setImages(CustomCollection<Image> images) {
         this.images = images;
     }
 

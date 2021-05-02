@@ -1,6 +1,6 @@
 package User;
 
-import Aggregation.AssociatedList;
+import Aggregation.CustomCollection;
 import Timeline.Tweet.Tweet;
 
 
@@ -17,7 +17,7 @@ public class Profile {
 
     private String phone;
 
-    private AssociatedList<String> topic;
+    private CustomCollection<String> topic;
 
     private Gender gender;
 
@@ -27,7 +27,7 @@ public class Profile {
         setGender(gender);
         this.email = email;
         this.phone = phone;
-        this.topic = new AssociatedList<>();
+        this.topic = new CustomCollection<>();
     }
 
     public Profile(String gender, String email, String description, String phone) throws InvalidGenderException {
@@ -97,11 +97,11 @@ public class Profile {
         this.phone = phone;
     }
 
-    public AssociatedList<String> getTopic() {
+    public CustomCollection<String> getTopic() {
         return topic;
     }
 
-    public void setTopics(AssociatedList<String> topic) {
+    public void setTopics(CustomCollection<String> topic) {
         this.topic = topic;
     }
 

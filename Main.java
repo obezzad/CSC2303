@@ -1,3 +1,4 @@
+import Aggregation.CustomCollection;
 import Timeline.Fleet;
 import Timeline.Tweet.HashTag;
 import Timeline.Tweet.Image;
@@ -14,10 +15,10 @@ public class Main {
     private static List<SavedSearch> searches;
      */
      /*
-     private static AssociatedList<Account> accounts;
-     private static AssociatedList<HashTag> hashtags;
-     private static AssociatedList<SavedSearch> searches;
-     we should import Aggregation.AssociatedList in all the classes we need to use collections
+     private static CustomCollection<Account> accounts;
+     private static CustomCollection<HashTag> hashtags;
+     private static CustomCollection<SavedSearch> searches;
+     we should import Aggregation.CustomCollection in all the classes we need to use collections
      so in account, hashtags, messages, savedsearch, 
      */
     private static int newID = 0;
@@ -28,8 +29,8 @@ public class Main {
         Tweet tweet_all, tweet_without_hashtag, tweet_without_image;
         Image img_1, img_2, img_3;
         HashTag hashtag_1, hashtag_2;
-        Tweet[] tweets = new Tweet[5];
-        Account[] accounts = new Account[3];
+        CustomCollection<Tweet> tweets = new CustomCollection<>();
+        CustomCollection<Account> accounts = new CustomCollection<>();
         Scanner sc = new Scanner(System.in);
         try {
             // bob_profile = new Profile(Gender.UNSPECIFIED.name(), "bob@marlook.me", "Programming is my life", "/images/bobmarlook.png", "202-555-0174", "music");
@@ -43,12 +44,11 @@ public class Main {
             julia_profile.getTopic().addElement("programming");
 
             bob_account = new Account("BobMarlook", "RitaForever", bob_profile);
-            accounts[0] = bob_account;
+            accounts.addElement(bob_account);
             steve_account = new Account("SteveDoe", "Coffee++", steve_profile);
-            accounts[1] = steve_account;
+            accounts.addElement(steve_account);
             julia_account = new Account("JuliaDoe", "Steve2021", julia_profile);
-            accounts[2] = julia_account;
-
+            accounts.addElement(julia_account);
 
             // TODO: Use Collection Framework's .add()
             img_1 = new Image("/images/tweet00000000001.png");
@@ -63,25 +63,25 @@ public class Main {
             tweet_all = new Tweet(Integer.toString(newID++), "This twitter thing is cool!");
             tweet_all.getImages().addElement(img_1);
             tweet_all.getHashtags().addElement(hashtag_1);
-            tweets[0] = tweet_all;
+            tweets.addElement(tweet_all);
             // tweet_without_hashtag = new Tweet(Integer.toString(newID++), "This twitter thing is cool!", img_2);
             tweet_without_hashtag = new Tweet(Integer.toString(newID++), "This twitter thing is cool!");
             tweet_without_hashtag.getImages().addElement(img_2);
-            tweets[1] = tweet_without_hashtag;
+            tweets.addElement(tweet_without_hashtag);
             // tweet_without_image = new Tweet(Integer.toString(newID++), "I can C in the dark!", hashtag_2);
             tweet_without_image = new Tweet(Integer.toString(newID++), "I can C in the dark!");
             tweet_without_image.getHashtags().addElement(hashtag_2);
-            tweets[2] = tweet_without_image;
+            tweets.addElement(tweet_without_image);
 
             // Tweet fleet_from_tweet = new Fleet(Integer.toString(newID++), "Exclusive meme!", img_3, bob_account);
             Tweet fleet_from_tweet = new Fleet(Integer.toString(newID++), "Exclusive meme!", bob_account);
             fleet_from_tweet.getImages().addElement(img_3);
-            tweets[3] = fleet_from_tweet;
+            tweets.addElement(fleet_from_tweet);
 
             // Fleet fleet_from_fleet = new Fleet(Integer.toString(newID++), "How are non-programmers surviving lockdown?", hashtag_2, julia_account);
             Fleet fleet_from_fleet = new Fleet(Integer.toString(newID++), "How are non-programmers surviving lockdown?", julia_account);
             fleet_from_fleet.getHashtags().addElement(hashtag_2);
-            tweets[4] = fleet_from_fleet;
+            tweets.addElement(fleet_from_fleet);
 
             boolean repeat;
             String str;
@@ -210,7 +210,7 @@ public class Main {
                         }
                         break;
                     case 9:
-                        for (Tweet tweet : tweets) {
+                        for (Tweet tweet : tweets.getElements()) {
                             System.out.println(tweet.toString());
                             if (tweet instanceof Fleet) {
                                 System.out.println(((Fleet) tweet).getSeenBy());
