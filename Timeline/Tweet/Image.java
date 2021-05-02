@@ -1,5 +1,6 @@
 package Timeline.Tweet;
 
+import Aggregation.AssociatedList;
 import User.Account;
 
 public class Image {
@@ -17,11 +18,7 @@ public class Image {
     public Image(String file, String caption) {
         this.file = file;
         this.caption = caption;
-    }
-
-    public Image(String file, String caption, Account tagged) {
-        this(file, caption);
-        this.tagged = tagged;
+        this.tagged = new AssociatedList<>();
     }
 
     public String getFile() {
@@ -40,14 +37,11 @@ public class Image {
         this.caption = caption;
     }
 
-    public Account getTagged() {
+    public AssociatedList<Account> getTagged() {
         return tagged;
     }
 
-    public void addTag(Account tag) {
-        // TODO: No aggregation yet.
-        this.tagged = tag;
-    }
+    public void setTagged(AssociatedList<Account> tagged) { this.tagged = tagged; }
 
     @Override
     public String toString() {

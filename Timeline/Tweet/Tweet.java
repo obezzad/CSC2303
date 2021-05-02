@@ -1,5 +1,7 @@
 package Timeline.Tweet;
 
+import Aggregation.AssociatedList;
+
 import java.util.GregorianCalendar;
 
 public class Tweet {
@@ -18,28 +20,15 @@ public class Tweet {
 
     private AssociatedList<Image> images;
 
-		private 
+	//	private
 
     public Tweet(String tweet_ID, String text) {
         this.text = text;
         this.likes = 0;
         this.tweet_ID = tweet_ID;
         this.posted = new GregorianCalendar();
-    }
-
-    public Tweet(String tweet_ID, String text, Image images) {
-        this(tweet_ID, text);
-        this.images = images;
-    }
-
-    public Tweet(String tweet_ID, String text, HashTag hashtag) {
-        this(tweet_ID, text);
-        this.hashtag = hashtag;
-    }
-
-    public Tweet(String tweet_ID, String text, Image images, HashTag hashtag) {
-        this(tweet_ID, text, images);
-        this.hashtag = hashtag;
+        this.images = new AssociatedList<>();
+        this.hashtag = new AssociatedList<>();
     }
 
     public String getText() {
@@ -66,19 +55,19 @@ public class Tweet {
         this.likes = likes;
     }
 
-    public HashTag getHashtags() {
+    public AssociatedList<HashTag> getHashtags() {
         return hashtag;
     }
 
-    public void setHashtags(HashTag hashtags) {
+    public void setHashtags(AssociatedList<HashTag> hashtags) {
         this.hashtag = hashtags;
     }
 
-    public Tweet getRetweet() {
+    public AssociatedList<Tweet> getRetweet() {
         return retweet;
     }
 
-    public void setRetweets(Tweet retweet) {
+    public void setRetweets(AssociatedList<Tweet> retweet) {
         this.retweet = retweet;
     }
 
@@ -90,11 +79,11 @@ public class Tweet {
         this.tweet_ID = tweet_ID;
     }
 
-    public Image getImage() {
+    public AssociatedList<Image> getImages() {
         return images;
     }
 
-    public void setImages(Image images) {
+    public void setImages(AssociatedList<Image> images) {
         this.images = images;
     }
 

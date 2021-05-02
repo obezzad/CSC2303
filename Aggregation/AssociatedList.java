@@ -1,3 +1,5 @@
+package Aggregation;
+
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -23,7 +25,7 @@ public class AssociatedList<T> {
         return this.elements;
     }
     
-    public <T> boolean removeElement(T element){
+    public boolean removeElement(T element){
         return elements.remove(element);
     }
     
@@ -35,12 +37,13 @@ public class AssociatedList<T> {
         }
     }
     
-    public void sortElement(Comparator c){
+    public void sortElement(Comparator<T> c){
         elements.sort(c);
     }
     
     // the comparator is used to define the search-by
-    public LinkedList<T> searchElement (Comparator c,T key){
+    // TODO: Turn into for-loop, and figure out the modification
+    public LinkedList<T> searchElement (Comparator<T> c,T key){
     
        LinkedList<T> returnedElements = new LinkedList<>();
        ListIterator<T> i = elements.listIterator();
@@ -48,12 +51,14 @@ public class AssociatedList<T> {
            T temp = i.next();
            if(c.compare(temp,key)==0){
                returnedElements.add(temp);
-              
            }
        }
       return returnedElements;
     }
-   
+
+    // TODO: Review toString.
+
+    /*
     @Override
     public String toString(){
         Iterator <T> iter= this.elements.iterator();
@@ -64,6 +69,6 @@ public class AssociatedList<T> {
         
         return returnedString;
     }
-
+*/
 
 }

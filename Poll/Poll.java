@@ -1,17 +1,18 @@
 package Poll;
 
+import Aggregation.AssociatedList;
+
 public class Poll {
 
     private String question;
 
     private int duration;
 
-    private AssociatedList<PollanswersOption> answers;
+    private AssociatedList<PollAnswerOption> answers;
 
-    public Poll(String question, int duration, PollAnswerOption answers) {
+    public Poll(String question, int duration) {
         this.question = question;
         this.duration = duration;
-        this.answers = answers;
     }
 
     public String getQuestion() {
@@ -30,11 +31,11 @@ public class Poll {
         this.duration = duration;
     }
 
-    public PollanswersOption getanswers() {
+    public AssociatedList<PollAnswerOption> getanswers() {
         return answers;
     }
 
-    public void setanswers(PollanswersOption answers) {
+    public void setAnswers(AssociatedList<PollAnswerOption> answers) {
         this.answers = answers;
     }
 

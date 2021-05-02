@@ -1,5 +1,7 @@
 package Timeline.Tweet;
 
+import Aggregation.AssociatedList;
+
 public class HashTag {
 
     private String hashtag;
@@ -18,11 +20,11 @@ public class HashTag {
         this.hashtag = hashtag;
     }
 
-    public Tweet getTweets() {
+    public AssociatedList<Tweet> getTweets() {
         return tweets;
     }
 
-    public void setTweets(Tweet tweets) {
+    public void setTweets(AssociatedList<Tweet> tweets) {
         this.tweets = tweets;
     }
 

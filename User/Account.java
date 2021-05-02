@@ -1,5 +1,6 @@
 package User;
 
+import Aggregation.AssociatedList;
 import Poll.Poll;
 import Messaging.Message;
 import Timeline.Moment;
@@ -40,25 +41,22 @@ public class Account {
         this.password = password;
         this.profile = profile;
         this.maxAttempts = 3;
-    }
-
-    public Account(String username, String password, Profile profile, Notification following, Notification followers, Message sent, Message received, Tweet tweets, Poll polls, SavedSearch searches, Moment moments, Thread threads) {
-        this(username, password, profile);
-        this.followers = followers;
-        this.following = following;
-        this.sent = sent;
-        this.received = received;
-        this.tweets = tweets;
-        this.polls = polls;
-        this.searches = searches;
-        this.moments = moments;
-        this.threads = threads;
+        this.followers = new AssociatedList<>();
+        this.following = new AssociatedList<>();
+        this.sent = new AssociatedList<>();
+        this.received = new AssociatedList<>();
+        this.tweets = new AssociatedList<>();
+        this.polls = new AssociatedList<>();
+        this.searches = new AssociatedList<>();
+        this.moments = new AssociatedList<>();
+        this.threads = new AssociatedList<>();
     }
 
     public String getUsername() {
         return username;
     }
-    
+
+    // TODO: C-style array acc[] --> Collection Framework
     public static boolean checkUsername(String entered, Account acc[]) throws DuplicateUserException {
         for (Account a : acc) {
             if (a.getUsername().equals(entered)) {
@@ -98,10 +96,8 @@ public class Account {
     }
 
     public boolean authenticate(String username, String password) {
-        if (this.username.equals(username)) {
-            if (this.password.equals(password)) {
-                return true;
-            }
+        if (this.username.equals(username) && this.password.equals(password)) {
+            return true;
         }
         return false;
     }
@@ -112,10 +108,13 @@ public class Account {
 
     @Override
     public boolean equals(Object obj){
-        if(obj != null && obj instanceof Account){
+        if (obj == null) return false;
+
+        if(obj instanceof Account){
           Account acc = (Account) obj;
           return this.username.equals(acc.getUsername());
         }
+
         return false;
     }
     

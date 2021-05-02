@@ -1,5 +1,6 @@
 package Timeline;
 
+import Aggregation.AssociatedList;
 import Timeline.Tweet.Tweet;
 
 public class Thread {
@@ -10,11 +11,7 @@ public class Thread {
 
     public Thread(Tweet tweet) {
         this.tweet = tweet;
-    }
-
-    public Thread(Tweet tweet, Tweet replies) {
-        this(tweet);
-        this.replies = replies;
+        this.replies = new AssociatedList<>();
     }
 
     public Tweet getTweet() {
@@ -25,16 +22,17 @@ public class Thread {
         this.tweet = tweet;
     }
 
-    public Tweet getreplies() {
+    public AssociatedList<Tweet> getreplies() {
         return replies;
     }
 
-    public void setreplies(Tweet replies) {
+    public void setreplies(AssociatedList<Tweet> replies) {
         this.replies = replies;
     }
 
-    @Override
+    // TODO: UPDATE TOSTRING
+/*    @Override
     public String toString() {
         return tweet;
-    }
+    } */
 }

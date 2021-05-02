@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class ProfileCollection(){
+public class ProfileCollection{
 
     List<Profile> profiles;
 
@@ -31,10 +31,10 @@ public class ProfileCollection(){
     }
 
 
-    public void sortProfiles(Comparator comp) {
+    public void sortProfiles(Comparator<Profile> comp) {
     }
 
-    public ListIterator getProfiles() {
+    public ListIterator<Profile> getProfiles() {
         return null;
     }
 

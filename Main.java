@@ -37,9 +37,12 @@ public class Main {
         Account[] accounts = new Account[3];
         Scanner sc = new Scanner(System.in);
         try {
-            bob_profile = new Profile(Gender.UNSPECIFIED.name(), "bob@marlook.me", "Programming is my life", "/images/bobmarlook.png", "202-555-0174", "music");
-            steve_profile = new Profile(Gender.MALE.name(), "stevedoe@email.com", "Gamer and content creator", "/images/stevedoe.png", "111-555-9999", "programming");
-            julia_profile = new Profile(Gender.FEMALE.name(), "juliadoe@email.com", "Feminist till I die ", "/images/juliadoe.png", "555-999-1111", "programming");
+            // bob_profile = new Profile(Gender.UNSPECIFIED.name(), "bob@marlook.me", "Programming is my life", "/images/bobmarlook.png", "202-555-0174", "music");
+            // steve_profile = new Profile(Gender.MALE.name(), "stevedoe@email.com", "Gamer and content creator", "/images/stevedoe.png", "111-555-9999", "programming");
+            // julia_profile = new Profile(Gender.FEMALE.name(), "juliadoe@email.com", "Feminist till I die ", "/images/juliadoe.png", "555-999-1111", "programming");
+            bob_profile = new Profile(Gender.UNSPECIFIED.name(), "bob@marlook.me", "Programming is my life", "/images/bobmarlook.png", "202-555-0174");
+            steve_profile = new Profile(Gender.MALE.name(), "stevedoe@email.com", "Gamer and content creator", "/images/stevedoe.png", "111-555-9999");
+            julia_profile = new Profile(Gender.FEMALE.name(), "juliadoe@email.com", "Feminist till I die ", "/images/juliadoe.png", "555-999-1111");
 
             bob_account = new Account("BobMarlook", "RitaForever", bob_profile);
             accounts[0] = bob_account;
@@ -48,24 +51,32 @@ public class Main {
             julia_account = new Account("JuliaDoe", "Steve2021", julia_profile);
             accounts[2] = julia_account;
 
+
+            // Use Collection Framework's .add()
             img_1 = new Image("/images/tweet00000000001.png");
             img_2 = new Image("/images/tweet00000000010.png");
             img_3 = new Image("/images/tweet00000000011.png");
 
+            // Use Collection Framework's .add()
             hashtag_1 = new HashTag("TwitterForever");
             hashtag_2 = new HashTag("30DaysCodingChallenges");
 
-            tweet_all = new Tweet(Integer.toString(newID++), "This twitter thing is cool!", img_1, hashtag_1);
+            // tweet_all = new Tweet(Integer.toString(newID++), "This twitter thing is cool!", img_1, hashtag_1);
+            tweet_all = new Tweet(Integer.toString(newID++), "This twitter thing is cool!");
             tweets[0] = tweet_all;
-            tweet_without_hashtag = new Tweet(Integer.toString(newID++), "This twitter thing is cool!", img_2);
+            // tweet_without_hashtag = new Tweet(Integer.toString(newID++), "This twitter thing is cool!", img_2);
+            tweet_without_hashtag = new Tweet(Integer.toString(newID++), "This twitter thing is cool!");
             tweets[1] = tweet_without_hashtag;
-            tweet_without_image = new Tweet(Integer.toString(newID++), "I can C in the dark!", hashtag_2);
+            // tweet_without_image = new Tweet(Integer.toString(newID++), "I can C in the dark!", hashtag_2);
+            tweet_without_image = new Tweet(Integer.toString(newID++), "I can C in the dark!");
             tweets[2] = tweet_without_image;
 
-            Tweet fleet_from_tweet = new Fleet(Integer.toString(newID++), "Exclusive meme!", img_3, bob_account);
+            // Tweet fleet_from_tweet = new Fleet(Integer.toString(newID++), "Exclusive meme!", img_3, bob_account);
+            Tweet fleet_from_tweet = new Fleet(Integer.toString(newID++), "Exclusive meme!", bob_account);
             tweets[3] = fleet_from_tweet;
 
-            Fleet fleet_from_fleet = new Fleet(Integer.toString(newID++), "How are non-programmers surviving lockdown?", hashtag_2, julia_account);
+            // Fleet fleet_from_fleet = new Fleet(Integer.toString(newID++), "How are non-programmers surviving lockdown?", hashtag_2, julia_account);
+            Fleet fleet_from_fleet = new Fleet(Integer.toString(newID++), "How are non-programmers surviving lockdown?", julia_account);
             tweets[4] = fleet_from_fleet;
 
             boolean repeat;
@@ -194,7 +205,7 @@ public class Main {
                         for (Tweet tweet : tweets) {
                             System.out.println(tweet.toString());
                             if (tweet instanceof Fleet) {
-                                System.out.println(((Fleet) tweet).getSeen_by());
+                                System.out.println(((Fleet) tweet).getSeenBy());
                             }
                         }
                         break;

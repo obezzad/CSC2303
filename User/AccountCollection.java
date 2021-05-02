@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class AccountCollection(){
+public class AccountCollection{
 
     List<Account> accounts;
 
@@ -31,10 +31,10 @@ public class AccountCollection(){
     }
 
 
-    public void sortAccounts(Comparator comp) {
+    public void sortAccounts(Comparator<Account> comp) {
     }
 
-    public ListIterator getAccounts() {
+    public ListIterator<Account> getAccounts() {
         return null;
     }
 

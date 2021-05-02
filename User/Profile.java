@@ -1,5 +1,6 @@
 package User;
 
+import Aggregation.AssociatedList;
 import Timeline.Tweet.Tweet;
 
 
@@ -19,22 +20,23 @@ public class Profile {
     private AssociatedList<String> topic;
 
     private Gender gender;
-    
+
+    // TODO: Add all constructors to make all combinations of Phone, Description, and Profile Picture optional.
     
     public Profile(String gender, String email, String phone) throws InvalidGenderException {
         setGender(gender);
         this.email = email;
         this.phone = phone;
+        this.topic = new AssociatedList<>();
     }
 
-    public Profile(String gender, String email, String description, String phone, String topic) throws InvalidGenderException {
+    public Profile(String gender, String email, String description, String phone) throws InvalidGenderException {
         this(gender, email, phone); 
         this.description = description;
-        this.topic = topic;
     }
 
-    public Profile(String gender, String email, String description, String profile_picture, String phone, String topic) throws InvalidGenderException {
-        this(gender, email, description, phone, topic); 
+    public Profile(String gender, String email, String description, String profile_picture, String phone) throws InvalidGenderException {
+        this(gender, email, description, phone);
         this.profile_picture = profile_picture;
     }
     
@@ -95,26 +97,32 @@ public class Profile {
         this.phone = phone;
     }
 
-    public String getTopic() {
+    public AssociatedList<String> getTopic() {
         return topic;
     }
 
-    public void setTopics(String topic) {
+    public void setTopics(AssociatedList<String> topic) {
         this.topic = topic;
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(obj != null && obj instanceof Profile){
-          Profile p = (Profile) obj;
-          return this.email.equals(p.getEmail());
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (obj instanceof Profile) {
+            Profile p = (Profile) obj;
+            return this.email.equals(p.getEmail());
         }
         return false;
     }
 
+    /*
+
+    // TODO: UPDATE TOSTRING
     @Override
     public String toString() {
         return description;
     }
+
+     */
 
 }

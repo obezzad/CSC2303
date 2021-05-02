@@ -16,8 +16,8 @@ public class Notification {
         this.notif = notif;
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return notif;
-    }
+    } */
 }
