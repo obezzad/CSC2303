@@ -46,10 +46,11 @@ public class AssociatedList<T> {
     public LinkedList<T> searchElement (Comparator<T> c,T key){
     
        LinkedList<T> returnedElements = new LinkedList<>();
-       ListIterator<T> i = elements.listIterator();
-       while(i.hasNext()){
+       // ListIterator<T> i = elements.listIterator();
+       for (ListIterator<T> i = elements.listIterator(); i.hasNext(); i.next()) {
+       //while(i.hasNext()){
            T temp = i.next();
-           if(c.compare(temp,key)==0){
+           if(c.compare(temp,key)==0) {
                returnedElements.add(temp);
            }
        }

@@ -6,7 +6,6 @@ import Timeline.Tweet.Tweet;
 public class Thread {
 
     private Tweet tweet;
-
     private AssociatedList<Tweet> replies;
 
     public Thread(Tweet tweet) {
