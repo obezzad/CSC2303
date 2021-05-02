@@ -115,14 +115,12 @@ public class Profile {
         return false;
     }
 
-    /*
-
-    // TODO: UPDATE TOSTRING
+    
     @Override
     public String toString() {
         return description;
     }
 
-     */
+
 
 }

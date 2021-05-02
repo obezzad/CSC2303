@@ -29,9 +29,9 @@ public class Thread {
         this.replies = replies;
     }
 
-    // TODO: UPDATE TOSTRING
-/*    @Override
+  
+    @Override
     public String toString() {
         return tweet;
-    } */
+    }
 }
