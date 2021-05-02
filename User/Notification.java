@@ -16,8 +16,10 @@ public class Notification {
         this.notif = notif;
     }
 
+    /*
     @Override
     public String toString() {
-        return notif;
+        return notif.toString();
     }
+     */
 }

@@ -29,9 +29,8 @@ public class Thread {
         this.replies = replies;
     }
 
-  
     @Override
     public String toString() {
-        return tweet;
+        return tweet.toString();
     }
 }

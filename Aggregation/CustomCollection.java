@@ -58,8 +58,6 @@ public class CustomCollection<T> {
     }
 
     // TODO: Review toString.
-
-    /*
     @Override
     public String toString(){
         Iterator <T> iter= this.elements.iterator();
@@ -70,6 +68,4 @@ public class CustomCollection<T> {
         
         return returnedString;
     }
-*/
-
 }
