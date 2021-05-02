@@ -111,8 +111,12 @@ public class Account {
     }
 
     @Override
-    public boolean equals(Account acc){
-        return this.username.equals(acc.username);
+    public boolean equals(Object obj){
+        if(obj != null && obj instanceof Account){
+          Account acc = (Account) obj;
+          return this.username.equals(acc.getUsername());
+        }
+        return false;
     }
     
     @Override

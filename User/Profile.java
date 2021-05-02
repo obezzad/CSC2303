@@ -104,8 +104,12 @@ public class Profile {
     }
 
     @Override
-    public boolean equals(Profile p){
-        return this.email.equals(p.email);
+    public boolean equals(Object obj){
+        if(obj != null && obj instanceof Profile){
+          Profile p = (Profile) obj;
+          return this.email.equals(p.getEmail());
+        }
+        return false;
     }
 
     @Override
