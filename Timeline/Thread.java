@@ -6,15 +6,15 @@ public class Thread {
 
     private Tweet tweet;
 
-    private Tweet reply;
+    private AssociatedList<Tweet> replies;
 
     public Thread(Tweet tweet) {
         this.tweet = tweet;
     }
 
-    public Thread(Tweet tweet, Tweet reply) {
+    public Thread(Tweet tweet, Tweet replies) {
         this(tweet);
-        this.reply = reply;
+        this.replies = replies;
     }
 
     public Tweet getTweet() {
@@ -25,16 +25,16 @@ public class Thread {
         this.tweet = tweet;
     }
 
-    public Tweet getReply() {
-        return reply;
+    public Tweet getreplies() {
+        return replies;
     }
 
-    public void setReply(Tweet reply) {
-        this.reply = reply;
+    public void setreplies(Tweet replies) {
+        this.replies = replies;
     }
 
     @Override
     public String toString() {
-        return "Thread\t:\t" + "\n\t\ttweet\t=\t" + tweet + "\n\t\treply\t=\t" + reply;
+        return tweet;
     }
 }

@@ -18,6 +18,6 @@ public class Notification {
 
     @Override
     public String toString() {
-        return "Notification\t:\t" + "\n\t\tnotif\t=\t" + notif;
+        return notif;
     }
 }

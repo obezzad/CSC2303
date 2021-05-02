@@ -2,21 +2,21 @@ package User;
 
 public class SavedSearch {
 
-    private String keyword;
+    private AssociatedList<String> keywords;
 
     private Account account;
 
-    public SavedSearch(String keyword, Account account) {
-        this.keyword = keyword;
+    public SavedSearch(String keywords, Account account) {
+        this.keywords = keywords;
         this.account = account;
     }
 
     public String getKeyword() {
-        return keyword;
+        return keywords;
     }
 
-    public void setKeywords(String keyword) {
-        this.keyword = keyword;
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
     }
 
     public Account getAccount() {
@@ -29,6 +29,6 @@ public class SavedSearch {
 
     @Override
     public String toString() {
-        return "SavedSearch{" + "keywords\t=\t" + keyword + "\n Account\t=\t" + account + '}';
+        return "Saved Search by: " + account;
     }
 }

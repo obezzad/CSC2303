@@ -10,13 +10,15 @@ public class Tweet {
 
     private int likes;
 
-    private HashTag hashtag;
+    private AssociatedList<HashTag> hashtag;
 
-    private Tweet retweet;
+    private AssociatedList<Tweet> retweet;
 
     private String tweet_ID;
 
-    private Image image;
+    private AssociatedList<Image> images;
+
+		private 
 
     public Tweet(String tweet_ID, String text) {
         this.text = text;
@@ -27,7 +29,7 @@ public class Tweet {
 
     public Tweet(String tweet_ID, String text, Image images) {
         this(tweet_ID, text);
-        this.image = images;
+        this.images = images;
     }
 
     public Tweet(String tweet_ID, String text, HashTag hashtag) {
@@ -89,16 +91,16 @@ public class Tweet {
     }
 
     public Image getImage() {
-        return image;
+        return images;
     }
 
-    public void setImages(Image image) {
-        this.image = image;
+    public void setImages(Image images) {
+        this.images = images;
     }
 
     @Override
     public String toString() {
-        return "Tweet\t:\t" + "\n\t\ttext\t=\t" + text + "\n\t\tposted\t=\t" + posted + "\n\t\tlikes\t=\t" + likes + "\n\t\thashtag\t=\t" + hashtag + "\n\t\tretweet\t=\t" + retweet + "\n\t\ttweet_ID\t=\t" + tweet_ID + "\n\t\timage\t=\t" + image;
+        return tweet_ID;
     }
 
 }

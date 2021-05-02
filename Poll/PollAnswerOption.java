@@ -29,6 +29,6 @@ public class PollAnswerOption {
 
     @Override
     public String toString() {
-        return "PollAnswerOption\t:\t" + "\n\t\toption\t=\t" + option + "\n\t\tanswer\t=\t" + answer;
+        return option;
     }
 }

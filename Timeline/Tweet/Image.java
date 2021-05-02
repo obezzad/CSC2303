@@ -8,7 +8,7 @@ public class Image {
 
     private String caption;
 
-    private Account tagged;
+    private AssociatedList<Account> tagged;
 
     public Image(String file) {
         this.file = file;
@@ -51,6 +51,6 @@ public class Image {
 
     @Override
     public String toString() {
-        return "Image\t:\t" + "\n\t\tfile\t=\t" + file + "\n\t\tcaption\t=\t" + caption + "\n\t\ttagged\t=\t" + tagged;
+        return caption;
     }
 }

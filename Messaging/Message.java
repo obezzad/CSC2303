@@ -54,6 +54,6 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message\t:\t" + "\n\t\ttext\t=\t" + text + "\n\t\tdate\t=\t" + date + "\n\t\tsender_receiver\t=\t" + sender_receiver + "\n\t\tstatus\t=\t" + status.toString();
+        return text;
     }
 }

@@ -10,7 +10,7 @@ import User.Account;
 
 public class Fleet extends Tweet {
 
-    private Account seen_by;
+    private AssociatedList<Account> seen_by;
 
     public Fleet(String tweet_ID, String text, Account account) {
         super(tweet_ID, text);
@@ -41,8 +41,9 @@ public class Fleet extends Tweet {
         // TODO: No aggregation yet.
     }
      */
+    
     @Override
     public String toString() {
-        return "Fleet with:\n\t" + super.toString() + "\n\tseen_by = " + seen_by + "\n";
+        return "Fleet seen by: " + seen_by;
     }
 }

@@ -16,7 +16,7 @@ public class Profile {
 
     private String phone;
 
-    private String topic;
+    private AssociatedList<String> topic;
 
     private Gender gender;
     
@@ -105,7 +105,7 @@ public class Profile {
 
     @Override
     public String toString() {
-        return "Profile with: gender = " + gender + ", email = " + email + ", description = " + description + ", profile_picture = " + profile_picture + ", pin = " + pin + ", phone = " + phone + ", topic = " + topic;
+        return description;
     }
 
 }

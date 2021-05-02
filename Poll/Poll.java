@@ -6,12 +6,12 @@ public class Poll {
 
     private int duration;
 
-    private PollAnswerOption answer;
+    private AssociatedList<PollanswersOption> answers;
 
-    public Poll(String question, int duration, PollAnswerOption answer) {
+    public Poll(String question, int duration, PollAnswerOption answers) {
         this.question = question;
         this.duration = duration;
-        this.answer = answer;
+        this.answers = answers;
     }
 
     public String getQuestion() {
@@ -30,16 +30,16 @@ public class Poll {
         this.duration = duration;
     }
 
-    public PollAnswerOption getAnswer() {
-        return answer;
+    public PollanswersOption getanswers() {
+        return answers;
     }
 
-    public void setAnswer(PollAnswerOption answer) {
-        this.answer = answer;
+    public void setanswers(PollanswersOption answers) {
+        this.answers = answers;
     }
 
     @Override
     public String toString() {
-        return "Poll\t:\t" + "\n\t\tquestion\t=\t" + question + "\n\t\tduration\t=\t" + duration + "\n\t\tanswers\t=\t" + answer;
+        return question;
     }
 }

@@ -13,23 +13,23 @@ public class Account {
 
     private Profile profile;
 
-    private Notification followers;
+    private AssociatedList<Notification> followers;
 
-    private Notification following;
+    private AssociatedList<Notification> following;
 
-    private Message sent;
+    private AssociatedList<Message> sent;
 
-    private Message received;
+    private AssociatedList<Message> received;
 
-    private Tweet tweets;
+    private AssociatedList<Tweet> tweets;
 
-    private Poll polls;
+    private AssociatedList<Poll> polls;
 
-    private SavedSearch searches;
+    private AssociatedList<SavedSearch> searches;
 
-    private Moment moments;
+    private AssociatedList<Moment> moments;
 
-    private Thread threads;
+    private AssociatedList<Thread> threads;
     
     private int passAttempt;
             
@@ -113,7 +113,7 @@ public class Account {
     
     @Override
     public String toString() {
-        return "Account\t:\n" + "\t\tUsername\t=\t" + username + "\n\t\tPassword\t=\t" + password + "\n\t\tProfile\t=\t" + profile + "\n\t\tFollowers\t=\t" + followers + "\n\t\tFollowing\t=\t" + following + "\n\t\tSent\t=\t\t" + sent + "\n\t\tReceived\t=\t" + received + "\n\t\tTweets\t=\t" + tweets + "\n\t\tPolls\t=\t" + polls + "\n\t\tSearches\t=\t" + searches + "\n\t\tMoments\t=\t" + moments + "\n\t\tThreads\t=\t" + threads;
+        return username;
     }
 
 }

@@ -4,7 +4,7 @@ public class HashTag {
 
     private String hashtag;
 
-    private Tweet tweets;
+    private AssociatedList<Tweet> tweets;
 
     public HashTag(String hashtag) {
         this.hashtag = hashtag;
@@ -28,6 +28,6 @@ public class HashTag {
 
     @Override
     public String toString() {
-        return "Hashtag\t:\t" + "\n\t\thashtag\t=\t" + hashtag + "\n\t\ttweets\t=\t" + tweets;
+        return hashtag;
     }
 }

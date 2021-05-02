@@ -9,6 +9,7 @@ import User.Gender;
 import User.InvalidGenderException;
 import User.Profile;
 import java.util.Scanner;
+import Aggregation.AssociatedList;
 
 public class Main {
 
@@ -16,6 +17,13 @@ public class Main {
     private static List<Account> accounts;
     private static List<HashTag> hashtags;
     private static List<SavedSearch> searches;
+     */
+     /*
+     private static AssociatedList<Account> accounts;
+     private static AssociatedList<HashTag> hashtags;
+     private static AssociatedList<SavedSearch> searches;
+     we should import Aggregation.AssociatedList in all the classes we need to use collections
+     so in account, hashtags, messages, savedsearch, 
      */
     private static int newID = 0;
 
