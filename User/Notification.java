@@ -18,6 +18,7 @@ public class Notification {
 
     @Override
     public String toString() {
-        return Boolean.toString(notif);
+      if(notif) return "On";
+        return "Off";
     }
 }
